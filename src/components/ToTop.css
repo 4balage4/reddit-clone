@@ -1,0 +1,14 @@
+.to-top svg {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  font-size: 50px;
+  /* z-index: 5000; */
+  color: var(--signup-button);
+    z-index: 1000;
+}
+
+
+.to-top.hidden {
+  display: none;
+}

@@ -1,3 +1,13 @@
+
+.navbar-left {
+  display: none;
+}
+
+
+
+
+@media only screen and (min-width: 500px) {
+
 .navbar-left {
   position: fixed;
   width: var(--navbar-left-width);
@@ -14,8 +24,13 @@
 
 .navbar-left h3 {
   /* padding: 5px ; */
+  border: 1px solid black;
+padding: 10px 0px;
+  width: 80%;
+  margin: 5px 20px;
   text-align: center;
   margin-bottom: 10px;
+  border-radius: 15px;
 }
 .navbar-left-button {
   padding: 10px 0px;
@@ -30,16 +45,4 @@
 }
 
 
-/*
-  return (
-    <nav className='navbar-left'>
-      <p>Home</p>
-      <p>Popular</p>
-      <h3>Choose topic</h3>
-      <p>Random</p>
-      <p>Politics</p>
-      <p>Happy</p>
-      <p>Technology</p>
-      <p>Movies & TV</p>
-    </nav>
-  ) */
+}

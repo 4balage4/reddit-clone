@@ -1,4 +1,17 @@
+/* this is the outer container where the posts are I set this to max, the rest of the
+*/
+
 .posts-container {
-  display: flex;
-  flex-direction: column;
+  width: 100vw;
+}
+
+
+
+@media only screen and (min-width: 500px) {
+  .posts-container {
+    
+  }
+
+
+
 }

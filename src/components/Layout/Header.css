@@ -1,4 +1,71 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: aliceblue;
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.logo img {
+  height: var(--header-height);
+  /* padding: 10px; */
+  margin-left: 20px;
+  width: 125px;
+
+}
+
+
+
+.header-button-container {
+
+}
+
+.login-btn, .signup-btn {
+  padding: 7.5px 15px;
+  font-size: 16px;
+  margin: 0 5px;
+
+}
+
+.login-btn {
+  background-color: rgb(122, 186, 241);
+}
+
+.login-btn:hover {
+ background-color: rgb(35, 147, 245);
+}
+
+.signup-btn {
+  background-color: var(--signup-button);
+  color: white;
+}
+
+
+.signup-btn:hover {
+background-color: rgb(241, 27, 27);
+
+
+}
+
+
+
+form {
+  display: none;
+}
+
+
+/*
+
+
+@media only screen and (min-width: 500px) {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,14 +74,27 @@ header {
   background-color: aliceblue;
   width: 100%;
   z-index: var(--menu-z-index);
+
 }
 
 .logo {
-   padding: 10px 10px;
-   margin: 10px;
-   color: rgb(14, 14, 11);
-   background-color: rgb(245, 230, 220);
-   border-radius: 19px 40px 20px 14px;
+
+}
+
+.logo img {
+  padding: 0 10px ;
+  width: 200px;
+  height: auto;
+}
+
+
+
+.logo img:hover {
+  transform: scale(1.02);
+}
+
+.logo img:active {
+  transform: scale(0.98)
 }
 
 form label {
@@ -28,48 +108,20 @@ form label {
   height: 100%;
   border: none;
   height: 30px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 15px 0 0 15px;
 }
 
 .search-btn {
   padding: 5px 10px;
-  /* margin: 5px 20px; */
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 15px 15px 0;
   background-color: orange;
 }
 
 .search-btn:hover {
-  background-color: rgb(190, 125, 2);
+  background-color: rgb(255, 194, 81);
   cursor: pointer;
 }
 
-
-.header-button-container {
-
-}
-
-.login-btn {
-  padding: 5px 10px;
-  /* margin: 5px 20px; */
-  background-color: rgb(122, 186, 241);
-  margin: 0 5px;
-}
-
-.login-btn:hover {
-  background-color: rgb(190, 125, 2);
-  cursor: pointer;
-}
-
-.signup-btn:hover {
-  background-color: orange;
-}
-
-.signup-btn {
-  padding: 5px 10px;
-  /* margin: 5px 20px; */
-  background-color: rgb(252, 38, 38);
-  margin: 0 5px;
-}
 .navbar-left-button {
 
 }
@@ -77,3 +129,5 @@ form label {
 .navbar-left-button:hover {
 
 }
+
+} */

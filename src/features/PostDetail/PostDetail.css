@@ -1,0 +1,15 @@
+
+.back-button-details {
+  display: flex;
+  align-items: center;
+}
+
+.back-button-details p {
+  font-weight: 700;
+}
+
+.back-button-details svg {
+  font-size: 50px;
+  color: var(--signup-button);
+  padding-left: 10px;
+}

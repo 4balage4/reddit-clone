@@ -1,4 +1,6 @@
 
+
+
 /* component css */
 @import './components/index.css';
 
@@ -12,12 +14,17 @@
   --header-height: 75px;
   --footer-height: 50px;
   --menu-z-index: 1000;
+  --main-margin-top: 250px;
 
+  /* also added to toTop, and background for the author  */
+  --signup-button:  rgb(250, 75, 75);
+  --comments-color: rgb(220, 237, 252);
 }
 
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {

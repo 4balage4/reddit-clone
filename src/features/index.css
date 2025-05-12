@@ -1,6 +1,8 @@
-@import './Posts/Posts.css';
 @import './Post/Post.css';
-@import './Posts//TemporaryPosts.css';
+@import './Post/TemporaryPost.css';
+
+
+@import './Posts/Posts.css';
 
 
 /* PostDetail */
@@ -8,3 +10,4 @@
 @import './PostDetail/PostDetail.css';
 @import './PostDetail//Comment.css';
 @import './PostDetail/PostComments.css';
+@import './PostDetail//TemporaryComment.css';

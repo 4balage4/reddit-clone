@@ -1,11 +1,14 @@
 // Post page with comments. Just the details of the post.
-import {useLocation} from 'react-router'
+import {useLocation, Link} from 'react-router'
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchPostDetails} from './postDetailSlice'
 import PostComments from './PostComments'
 import Post from '../Post/Post'
-
+import TemporaryPost from '../Post/TemporaryPost'
+import TemporaryComment from '../PostDetail/TemporaryComment'
+import {placeholderGenerator} from '../../utils/placeHolderGenerator'
+import { IoChevronBackCircleSharp } from "react-icons/io5";
 
 
 function PostDetail() {
@@ -43,12 +46,30 @@ function PostDetail() {
     //   console.log('POST details: ', post)
     console.log('COMMENTS details: ', comments)
 
+
+
+
   if (status === 'loading' ) {
-    return <h1>LOADING ....</h1>
+    return (
+      <>
+        <TemporaryPost/>
+        {placeholderGenerator(<TemporaryComment/>)}
+      </>
+    )
   }
+
+
+
+
 
   return (
         <div className='post-details-card'>
+        <Link to='/'>
+        <div className='back-button-details'>
+          <IoChevronBackCircleSharp />
+          <p>Back</p>
+        </div>
+        </Link>
 
           <Post
               title={title}

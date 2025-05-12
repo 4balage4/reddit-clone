@@ -1,11 +1,16 @@
-import React from 'react'
 import Button from '../Button'
+// import imageUrl from '../../assets/custom-logo.png'
+import imageUrl from '../../assets/picdit-logo-wide.png'
+import {Link} from 'react-router'
+
 
 function Header() {
   return (
     <header className='header'>
         <div className='logo'>
-          <h2>Balagedit</h2>
+          <Link to='/'>
+            <img src={imageUrl} alt='picdit logo' />
+          </Link>
         </div>
         <form action="">
           <label htmlFor="search">
