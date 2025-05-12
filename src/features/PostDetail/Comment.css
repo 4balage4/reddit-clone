@@ -1,0 +1,37 @@
+
+
+.comment-container {
+  background-color: rgb(245, 232, 216);
+  padding: 20px 30px;
+  max-width: 600px;
+  margin: 5px auto;
+
+}
+.header-comment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.sub-comments {
+  margin-left: 40px;
+}
+
+
+.sub-comments.hidden {
+  display: none;
+}
+
+.show-replies {
+  padding: 5px 10px;
+  background-color: green;
+  font-size: 12;
+
+
+}

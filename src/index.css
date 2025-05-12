@@ -1,0 +1,30 @@
+
+/* component css */
+@import './components/index.css';
+
+/* pages css */
+@import './features/index.css';
+
+:root {
+  --navbar-left-width: 200px;
+  --navbar-right-width: 200px;
+  /* also this is the top property for the navbars */
+  --header-height: 75px;
+  --footer-height: 50px;
+  --menu-z-index: 1000;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

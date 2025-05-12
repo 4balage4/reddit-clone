@@ -1,0 +1,45 @@
+.navbar-left {
+  position: fixed;
+  width: var(--navbar-left-width);
+  background-color: aliceblue;
+  padding: 15px 0;
+  border-radius: 5px;
+  top: var(--header-height);
+  z-index: var(--menu-z-index);
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.navbar-left h3 {
+  /* padding: 5px ; */
+  text-align: center;
+  margin-bottom: 10px;
+}
+.navbar-left-button {
+  padding: 10px 0px;
+  width: 80%;
+  margin: 5px 20px;
+  background-color: rgb(122, 186, 241);
+}
+
+.navbar-left-button:hover {
+  background-color: rgb(35, 147, 245);
+  cursor: pointer;
+}
+
+
+/*
+  return (
+    <nav className='navbar-left'>
+      <p>Home</p>
+      <p>Popular</p>
+      <h3>Choose topic</h3>
+      <p>Random</p>
+      <p>Politics</p>
+      <p>Happy</p>
+      <p>Technology</p>
+      <p>Movies & TV</p>
+    </nav>
+  ) */

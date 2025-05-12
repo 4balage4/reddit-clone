@@ -1,0 +1,51 @@
+.post-card {
+  max-height: 500px;
+  height: 500px;
+  max-width: 700px;
+  /* width: 700px; */
+}
+
+/* .img-container {
+  width: 100%;
+  height: 100%;
+} */
+
+.post-card img {
+  height: 100%;
+  width: 100%;
+    /* padding: 50px; */
+
+  }
+
+.post-card {
+  border: 1px black solid;
+  padding: 25px 0;
+
+  width: calc(100vw - var(--navbar-left-width) - var(--navbar-right-width));
+  margin: 50px auto;
+}
+
+.post-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+      <div className='post-card'>
+      <h3>Name of the topic</h3>
+      <p> in /🌐Tech by 🤵🏻Peter, 2 hours ago...</p>
+      <div className="img-container">
+        <img className='post-image' src="https://images.unsplash.com/photo-1743341720521-21fddab6d0bf?q=80&w=1295&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+
+      </div>
+      <div className='post-buttons'>
+        <div className='likes'>
+            <p>👍🏻</p>
+            <p>👎🏻</p>
+        </div>
+        <p>🗨️ (104)</p>
+        <p>Share 🔗</p>
+      </div>
+    </div>
+     */

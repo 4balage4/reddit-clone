@@ -1,0 +1,10 @@
+@import './Posts/Posts.css';
+@import './Post/Post.css';
+@import './Posts//TemporaryPosts.css';
+
+
+/* PostDetail */
+/* everything is in one place */
+@import './PostDetail/PostDetail.css';
+@import './PostDetail//Comment.css';
+@import './PostDetail/PostComments.css';
