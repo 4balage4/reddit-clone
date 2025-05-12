@@ -1,0 +1,20 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--footer-height);
+  background-color: gray;
+}
+
+footer p, footer a {
+  margin: 0 5px;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  background-color: white;
+}

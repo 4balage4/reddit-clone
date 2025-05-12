@@ -1,0 +1,79 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: var(--header-height);
+  background-color: aliceblue;
+  width: 100%;
+  z-index: var(--menu-z-index);
+}
+
+.logo {
+   padding: 10px 10px;
+   margin: 10px;
+   color: rgb(14, 14, 11);
+   background-color: rgb(245, 230, 220);
+   border-radius: 19px 40px 20px 14px;
+}
+
+form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#search {
+  height: 100%;
+  border: none;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-btn {
+  padding: 5px 10px;
+  /* margin: 5px 20px; */
+  border-radius: 0 5px 5px 0;
+  background-color: orange;
+}
+
+.search-btn:hover {
+  background-color: rgb(190, 125, 2);
+  cursor: pointer;
+}
+
+
+.header-button-container {
+
+}
+
+.login-btn {
+  padding: 5px 10px;
+  /* margin: 5px 20px; */
+  background-color: rgb(122, 186, 241);
+  margin: 0 5px;
+}
+
+.login-btn:hover {
+  background-color: rgb(190, 125, 2);
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: orange;
+}
+
+.signup-btn {
+  padding: 5px 10px;
+  /* margin: 5px 20px; */
+  background-color: rgb(252, 38, 38);
+  margin: 0 5px;
+}
+.navbar-left-button {
+
+}
+
+.navbar-left-button:hover {
+
+}
