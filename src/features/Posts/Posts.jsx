@@ -5,7 +5,8 @@ import {useSelector, useDispatch} from 'react-redux'
 import {fetchAll} from '../../features/menuSlices/allSlice'
 import {fetchPopular} from '../../features/menuSlices/popularSlice'
 import {fetchAmazing} from '../../features/menuSlices/amazingSlice'
-import TemporaryPosts from './TemporaryPosts'
+import TemporaryPost from '../Post/TemporaryPost'
+import {placeholderGenerator} from '../../utils/placeHolderGenerator'
 
 
 function Posts() {
@@ -37,8 +38,12 @@ function Posts() {
     return state[active]?.posts ?? []
   })
 
+
+
+
   if (status === 'loading' || amazingStatus === 'loading'|| popularStatus === 'loading') {
-    return  <TemporaryPosts/>
+
+    return placeholderGenerator(<TemporaryPost/>)
   }
 
 

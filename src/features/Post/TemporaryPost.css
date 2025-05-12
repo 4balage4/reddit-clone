@@ -1,0 +1,42 @@
+
+
+.post-card.loading-post {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 10px;
+  /* background-color: gray; */
+  box-shadow: 0 0 5px 0 var(--comments-color);
+  border-radius: 10px;
+  border: 1px solid var(--comments-color);
+  height: 350px;
+}
+
+.post-card h3.loading-post {
+  height: 30px;
+  background-color: var(--comments-color);
+  width: 100%;
+}
+
+.post-image.loading-post {
+  width: 100%;
+  height: 300px;
+  background-color: var(--comments-color);
+  margin: 0 auto;
+  border-radius: 15px;
+  /* box-shadow: 0 0 5px 0 black; */
+}
+
+.post-buttons.loading-post {
+  height: 50px;
+  width: 100%;
+  background-color: var(--comments-color);
+}
+
+
+
+
+@media only screen and (min-width: 500px) {
+  
+}
