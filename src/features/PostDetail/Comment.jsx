@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import Button from '../../components/Button'
 import {getPostDate} from '../../utils/postDateConverter'
 import { MdOutlineThumbUp } from "react-icons/md";
