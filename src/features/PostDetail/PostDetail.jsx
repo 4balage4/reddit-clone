@@ -1,5 +1,5 @@
 // Post page with comments. Just the details of the post.
-import {useLocation, Link} from 'react-router'
+import {useLocation, useNavigate} from 'react-router'
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchPostDetails} from './postDetailSlice'
@@ -9,11 +9,13 @@ import TemporaryPost from '../Post/TemporaryPost'
 import TemporaryComment from '../PostDetail/TemporaryComment'
 import {placeholderGenerator} from '../../utils/placeHolderGenerator'
 import { IoChevronBackCircleSharp } from "react-icons/io5";
+import Button from '../../components/Button'
 
 
 function PostDetail() {
 
   const location = useLocation()
+  const navigate = useNavigate()
 
   const {fetchPostUrl} = location.state || {}
 
@@ -35,16 +37,15 @@ function PostDetail() {
 
 
 
-
-
-
       const {post, comments, error, status} = useSelector(state => state.postDetail)
 
       const {title, id, score, ups, author, created, url, subreddit, preview, num_comments, over_18, permalink , selftext} = post
 
       // console.log('posturl: ',fetchPostUrl)
     //   console.log('POST details: ', post)
-    console.log('COMMENTS details: ', comments)
+
+
+
 
 
 
@@ -64,12 +65,12 @@ function PostDetail() {
 
   return (
         <div className='post-details-card'>
-        <Link to='/'>
-        <div className='back-button-details'>
+
+        <Button className='back-button-details' onClick={() => navigate(-1)}>
           <IoChevronBackCircleSharp />
-          <p>Back</p>
-        </div>
-        </Link>
+          back
+        </Button>
+
 
           <Post
               title={title}
@@ -85,6 +86,7 @@ function PostDetail() {
               over18={over_18}
               permalink={permalink}
               selftext={selftext}
+              disabledToClick={true}
               />
           <PostComments/>
         </div>

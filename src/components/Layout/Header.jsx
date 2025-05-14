@@ -1,29 +1,60 @@
-import Button from '../Button'
+import Button from "../Button";
 // import imageUrl from '../../assets/custom-logo.png'
-import imageUrl from '../../assets/picdit-logo-wide.png'
-import {Link} from 'react-router'
-
+import imageUrl from "../../assets/picdit-logo-wide.png";
+import { Link, useNavigate, createSearchParams } from "react-router";
+import { useDispatch } from "react-redux";
+import { setActive } from "../../features/menuSlices/activeSlice";
+import { useState } from "react";
+import { fetchSearch } from "../../features/menuSlices/searchSlice";
 
 function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  function handleChange(e) {
+    setSearchQuery(e.target.value);
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    dispatch(setActive("search"));
+    dispatch(fetchSearch(searchQuery));
+
+    navigate({
+      pathname: "/search",
+      search: createSearchParams({
+        q: searchQuery,
+      }).toString(),
+    });
+  }
+
+  const dispatch = useDispatch();
   return (
-    <header className='header'>
-        <div className='logo'>
-          <Link to='/'>
-            <img src={imageUrl} alt='picdit logo' />
-          </Link>
-        </div>
-        <form action="">
-          <label htmlFor="search">
-            <input id='search' type="text" />
-            <Button type='submit' className='search-btn'>Search 🔎</Button>
-          </label>
-        </form>
-        <div className='header-button-container'>
-          <Button className='login-btn'>Log in</Button>
-          <Button className='signup-btn'>Sign up</Button>
-        </div>
+    <header className="header">
+      <div className="logo">
+        <Link to="/">
+          <img src={imageUrl} alt="picdit logo" />
+        </Link>
+      </div>
+      <form action="" onSubmit={(e) => onSubmit(e)}>
+        <label htmlFor="search">
+          <input
+            id="search"
+            type="text"
+            value={searchQuery}
+            onChange={handleChange}
+          />
+          <Button type="submit" className="search-btn">
+            Search
+          </Button>
+        </label>
+      </form>
+      <div className="header-button-container">
+        <Button className="login-btn">Log in</Button>
+        <Button className="signup-btn">Sign up</Button>
+      </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

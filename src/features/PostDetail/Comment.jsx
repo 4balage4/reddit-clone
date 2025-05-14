@@ -33,11 +33,11 @@ function Comment({author, ups, body, replies, created, replies_id}) {
       <p className='comment-body'>{body}</p>
     <div className='comment-social'>
       <div className='comment-section-likes '>
-        <MdOutlineThumbUp/>
+        <MdOutlineThumbUp className='thumb-up'/>
         <p>
           {ups}
           </p>
-        <MdOutlineThumbDownAlt/>
+        <MdOutlineThumbDownAlt className='thumb-down'/>
         </div>
       {replies_id &&
         <Button className={`show-replies ${!show ? '' : 'active'}`} onClick={() => handleClick(replies_id)} >{!show ? 'Show replies' : "Hide replies"} <AiOutlineComment />

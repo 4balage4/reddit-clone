@@ -5,7 +5,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchAmazing = createAsyncThunk(
   'amazing/fetchAmazing',
   async () => {
-    const res = await fetch('https://www.reddit.com/r/me_irl.json')
+    const res = await fetch('https://www.reddit.com/r/europe/.json')
     const json = await res.json()
     return json.data.children.map(item => item.data)
   }

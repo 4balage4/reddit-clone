@@ -8,19 +8,23 @@ header {
   height: var(--header-height);
   display: flex;
   align-items: center;
+  /* flex-direction: column; */
   justify-content: space-between;
 }
 
 
 
 .logo img {
-  height: var(--header-height);
+  height: 75px;
   /* padding: 10px; */
   margin-left: 20px;
   width: 125px;
-
+  transition: all 200ms ease-in-out;
 }
 
+.logo img:hover {
+  transform: scale(1.1);
+}
 
 
 .header-button-container {
@@ -31,6 +35,7 @@ header {
   padding: 7.5px 15px;
   font-size: 16px;
   margin: 0 5px;
+  display: none;
 
 }
 
@@ -49,85 +54,55 @@ header {
 
 
 .signup-btn:hover {
-background-color: rgb(241, 27, 27);
+background-color: var(--signup-button-hover);
 
 
 }
-
-
 
 form {
-  display: none;
-}
-
-
-/*
-
-
-@media only screen and (min-width: 500px) {
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  height: var(--header-height);
-  background-color: aliceblue;
-  width: 100%;
-  z-index: var(--menu-z-index);
-
-}
-
-.logo {
-
-}
-
-.logo img {
-  padding: 0 10px ;
-  width: 200px;
-  height: auto;
-}
-
-
-
-.logo img:hover {
-  transform: scale(1.02);
-}
-
-.logo img:active {
-  transform: scale(0.98)
-}
-
-form label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 70%;
 }
 
 
 #search {
   height: 100%;
-  border: none;
+  background-color: var(--comments-color);
+  /* border: none; */
+  padding: 0 10px;
   height: 30px;
   border-radius: 15px 0 0 15px;
+  width: 100px;
 }
 
 .search-btn {
   padding: 5px 10px;
   border-radius: 0 15px 15px 0;
-  background-color: orange;
+  background-color: var(--signup-button);
+  color: white;
+width: 80px;
 }
 
 .search-btn:hover {
-  background-color: rgb(255, 194, 81);
+  background-color: var(--signup-button-hover);
   cursor: pointer;
 }
 
-.navbar-left-button {
 
+@media only screen and (min-width: 500px) {
+.logo img {
+  height: var(--header-height);
 }
 
-.navbar-left-button:hover {
-
+form {
+  width: 375px;
 }
 
-} */
+#search {
+  width: 225px;
+}
+
+
+.login-btn, .signup-btn {
+  display: inline;
+}
+}
