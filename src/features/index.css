@@ -13,6 +13,8 @@
 @import './PostDetail//TemporaryComment.css';
 
 
+@import '../components/ToastNotification/toast.css';
+
 
 
 
@@ -29,4 +31,9 @@
 
 .thumb-down:hover, .thumb-down:active {
   color: red;
+}
+
+
+.thumb-up.active {
+    color: green
 }

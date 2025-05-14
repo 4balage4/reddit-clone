@@ -5,6 +5,7 @@ import { MdOutlineThumbUp } from "react-icons/md";
 import { MdOutlineThumbDownAlt } from "react-icons/md";
 import { MdOutlineLink } from "react-icons/md";
 import { AiOutlineComment } from "react-icons/ai";
+import {useToast} from '../../components/ToastNotification/ToastProvider'
 
 
 function Post({
@@ -23,6 +24,8 @@ function Post({
   disabledToClick
 }) {
 
+
+  const {addToast} = useToast()
 
   return (
     <div className="post-card">
@@ -48,17 +51,17 @@ function Post({
         <div className="likes">
           <div className='like-container'>
             {/* style in the index */}
-            <MdOutlineThumbUp className='thumb-up' />
+            <MdOutlineThumbUp className='thumb-up' onClick={() => {addToast("You liked the post but only locally", "success" )}} />
              <p>
               {ups}
               </p>
-            <MdOutlineThumbDownAlt className='thumb-down' />
+            <MdOutlineThumbDownAlt className='thumb-down'onClick={() => {addToast("You disliked the post but only locally", "alert" )}} />
             </div>
         </div>
         <Link to={disabledToClick ? '' : `${score}`} state={{fetchPostUrl: permalink}}>
         <p className='post-comment-container'><AiOutlineComment/> ({comments})</p>
         </Link>
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" >
          <MdOutlineLink/>
          Reddit
         </a>

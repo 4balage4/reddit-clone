@@ -1,8 +1,52 @@
 
+
+
+
 .navbar-left {
-  display: none;
+
+  position: fixed;
+  width: 100vw;
+  background-color: aliceblue;
+  padding: 0 0;
+  border-radius: 5px;
+  top: var(--header-height);
+  z-index: var(--menu-z-index);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12px;
 }
 
+
+.navbar-left h3 {
+  display: none;
+  /* padding: 5px ; */
+
+}
+.navbar-left-button {
+  padding: 5px 0px;
+  width: 100px;
+  margin: 10px 0;
+  background-color: rgb(122, 186, 241);
+   font-size: 12px;
+}
+
+.navbar-left-button:hover {
+  background-color: rgb(35, 147, 245);
+  cursor: pointer;
+}
+
+
+.menu-closed {
+
+}
+
+
+
+.navbar-left-button.show {
+  display: inline;
+}
 
 
 

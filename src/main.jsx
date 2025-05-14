@@ -8,11 +8,13 @@ import Layout from "./components/Layout/Layout";
 import Posts from "./features/Posts/Posts";
 import PostDetail from "./features/PostDetail/PostDetail";
 import { store } from "./store";
-import ScrollToTop from './utils/ScrollToTop.jsx'
+import ScrollToTop from './utils/ScrollToTop'
+import ToastProvider from './components/ToastNotification/ToastProvider'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
+      <ToastProvider>
       <BrowserRouter>
         <ScrollToTop/>
 
@@ -39,6 +41,7 @@ createRoot(document.getElementById("root")).render(
         </Routes>
 
       </BrowserRouter>
+      </ToastProvider>
     </Provider>
   </StrictMode>
 );

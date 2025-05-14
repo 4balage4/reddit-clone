@@ -4,7 +4,7 @@ header {
   left: 0;
   width: 100%;
   background-color: aliceblue;
-  z-index: 1000;
+  z-index: 10;
   height: var(--header-height);
   display: flex;
   align-items: center;
@@ -61,34 +61,74 @@ background-color: var(--signup-button-hover);
 
 form {
   width: 70%;
+
+  /* this is the intended fix for the  */
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
 }
 
 
 #search {
   height: 100%;
+  margin: 0 5px;
   background-color: var(--comments-color);
   /* border: none; */
   padding: 0 10px;
   height: 30px;
-  border-radius: 15px 0 0 15px;
+  border-radius: 15px;
   width: 100px;
+  border: none;
+
 }
 
 .search-btn {
   padding: 5px 10px;
-  border-radius: 0 15px 15px 0;
+  border-radius: 15px;
   background-color: var(--signup-button);
   color: white;
 width: 80px;
 }
+
 
 .search-btn:hover {
   background-color: var(--signup-button-hover);
   cursor: pointer;
 }
 
+.search-btn:disabled {
+  background-color: rgb(248, 137, 137);
+  cursor: not-allowed;
+}
+
 
 @media only screen and (min-width: 500px) {
+
+
+
+.logo img {
+  height: var(--header-height);
+}
+
+form {
+  width: 350px;
+}
+
+#search {
+  width: 200px;
+}
+
+
+.login-btn, .signup-btn {
+}
+}
+
+@media only screen and (min-width: 1024px) {
+
+form {
+  width: auto;
+}
+
 .logo img {
   height: var(--header-height);
 }

@@ -4,6 +4,7 @@ import {getPostDate} from '../../utils/postDateConverter'
 import { MdOutlineThumbUp } from "react-icons/md";
 import { MdOutlineThumbDownAlt } from "react-icons/md";
 import { AiOutlineComment } from "react-icons/ai";
+import {useToast} from '../../components/ToastNotification/ToastProvider'
 
 
 // contain the 3 information of the poster, text, time. That is it.
@@ -11,7 +12,9 @@ import { AiOutlineComment } from "react-icons/ai";
 // have the styling
 
 function Comment({author, ups, body, replies, created, replies_id}) {
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = useState(false)
+
+  const {addToast} = useToast()
 
 
   getPostDate(created)
@@ -21,6 +24,7 @@ function Comment({author, ups, body, replies, created, replies_id}) {
     comment.classList.toggle('hidden')
     setShow(prev => !prev)
  }
+
 
   return (
     <div className='comment-container'>
@@ -33,11 +37,11 @@ function Comment({author, ups, body, replies, created, replies_id}) {
       <p className='comment-body'>{body}</p>
     <div className='comment-social'>
       <div className='comment-section-likes '>
-        <MdOutlineThumbUp className='thumb-up'/>
-        <p>
-          {ups}
-          </p>
-        <MdOutlineThumbDownAlt className='thumb-down'/>
+      <MdOutlineThumbUp className='thumb-up' onClick={() => {addToast("You liked this comment but only locally", "success" )}} />
+             <p>
+              {ups}
+              </p>
+            <MdOutlineThumbDownAlt className='thumb-down'onClick={() => {addToast("You disliked this comment but only locally", "alert" )}} />
         </div>
       {replies_id &&
         <Button className={`show-replies ${!show ? '' : 'active'}`} onClick={() => handleClick(replies_id)} >{!show ? 'Show replies' : "Hide replies"} <AiOutlineComment />

@@ -1,0 +1,38 @@
+
+.toast {
+  height: 75px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border: solid 0.5px;
+  padding: 10px;
+
+  z-index: 5000;
+}
+
+
+.toast.alert {
+color: red;
+background-color: rgba(249, 191, 191, 0.80);
+}
+
+.toast.neutral {
+color: orange;
+background-color: rgba(253, 247, 210, 0.80);
+}
+
+.toast.success {
+color: green;
+background-color: rgba(169, 245, 178, 0.80);
+}
+
+
+.toasts-container {
+  position: fixed;
+  width: 250px;
+  min-height: 75px;
+  bottom: 5%;
+  right: 2.5%;
+}
