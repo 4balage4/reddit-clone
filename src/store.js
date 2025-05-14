@@ -6,6 +6,7 @@ import amazingReducer from './features/menuSlices/amazingSlice'
 import popularReducer from './features/menuSlices/popularSlice'
 import activeReducer from './features/menuSlices/activeSlice'
 import postDetailReducer from './features/PostDetail/postDetailSlice'
+import searchReducer from './features/menuSlices/searchSlice'
 
 
 export const store = configureStore({
@@ -17,5 +18,6 @@ export const store = configureStore({
     popular: popularReducer,
     active: activeReducer,
     postDetail: postDetailReducer,
+    search: searchReducer,
   }
 })

@@ -18,7 +18,9 @@
 
   /* also added to toTop, and background for the author  */
   --signup-button:  rgb(250, 75, 75);
+  --signup-button-hover: rgb(241, 27, 27);
   --comments-color: rgb(220, 237, 252);
+
 }
 
 * {

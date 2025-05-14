@@ -12,17 +12,19 @@ function LeftMenu() {
   return (
     <nav className='navbar-left'>
         <h3>Menu</h3>
-      <Link to="/">
+      <Link to="/all">
         <Button className="navbar-left-button" onClick={() => dispatch(setActive('all'))}>Home</Button>
       </Link>
-      <Link to="/">
+      <Link to="/pics">
         <Button className="navbar-left-button" onClick={() => dispatch(setActive('popular'))}>Pics</Button>
       </Link>
-      <Link to="/">
-        <Button className="navbar-left-button" onClick={() => dispatch(setActive('amazing'))}>Me Irl</Button>
+      <Link to="/europe">
+        <Button className="navbar-left-button" onClick={() => dispatch(setActive('amazing'))}>Europe</Button>
       </Link>
     </nav>
   )
 }
+
+
 
 export default LeftMenu

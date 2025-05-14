@@ -19,13 +19,14 @@ function Post({
   over18,
   comments,
   permalink,
-  selftext
+  selftext,
+  disabledToClick
 }) {
 
 
   return (
     <div className="post-card">
-      <Link to={`/:${score}`} state={{fetchPostUrl: permalink}}>
+      <Link to={disabledToClick ? '' : `${score}`} state={{fetchPostUrl: permalink}}>
       <h3>{title}</h3>
       <div className='post-details'>
         <p className='created-author'>
@@ -46,19 +47,20 @@ function Post({
       <div className="post-buttons">
         <div className="likes">
           <div className='like-container'>
-            <MdOutlineThumbUp />
+            {/* style in the index */}
+            <MdOutlineThumbUp className='thumb-up' />
              <p>
               {ups}
               </p>
-            <MdOutlineThumbDownAlt />
+            <MdOutlineThumbDownAlt className='thumb-down' />
             </div>
         </div>
-        <Link to={`/:${score}`} state={{fetchPostUrl: permalink}}>
+        <Link to={disabledToClick ? '' : `${score}`} state={{fetchPostUrl: permalink}}>
         <p className='post-comment-container'><AiOutlineComment/> ({comments})</p>
         </Link>
         <a href={url} target="_blank">
          <MdOutlineLink/>
-         share
+         Reddit
         </a>
       </div>
     </div>

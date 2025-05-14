@@ -9,12 +9,14 @@ import TemporaryPost from '../Post/TemporaryPost'
 import {placeholderGenerator} from '../../utils/placeHolderGenerator'
 
 
+
 function Posts() {
   const dispatch = useDispatch()
   const active = useSelector(state => state.active)
   const {status} = useSelector(state=> state.all)
   const amazingStatus = useSelector(state=> state.amazing.status)
   const popularStatus = useSelector(state=> state.popular.status)
+  const searchStatus = useSelector(state=> state.search.status)
 
 
   // here is the problem, somehow the popular and the amazing does not work
@@ -31,6 +33,7 @@ function Posts() {
       dispatch(fetchAmazing())
 
     }
+
   }, [active, dispatch])
 
   // chaining. state[active] -> returns all, amazing, popular state.
@@ -41,9 +44,9 @@ function Posts() {
 
 
 
-  if (status === 'loading' || amazingStatus === 'loading'|| popularStatus === 'loading') {
+  if (status === 'loading' || amazingStatus === 'loading'|| popularStatus === 'loading' || searchStatus === 'loading') {
 
-    return placeholderGenerator(<TemporaryPost/>)
+    return placeholderGenerator(<TemporaryPost />)
   }
 
 

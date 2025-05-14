@@ -73,18 +73,28 @@
 .post-buttons a {
   display: flex;
   align-items: center;
+
 }
 
 .post-buttons a svg {
   font-size: 30px;
   margin: 0 5px;
+
+}
+
+.post-buttons a:hover {
+   cursor: pointer;
+  transform: scale(1.15);
+    transition: all 200ms ease-in-out;
 }
 
 .post-comment-container {
   display: flex;
   align-items: center;
+ 
   /* background-color: aliceblue; */
 }
+
 
 
 
