@@ -27,3 +27,11 @@
   width: 100%;
   background-color: rgb(220, 237, 252);
 }
+
+
+@media only screen and (min-width: 1024px) {
+  .comment-container.loading-comment {
+    margin: 0;
+
+  }
+ }

@@ -13,3 +13,12 @@
   color: var(--signup-button);
   padding-left: 10px;
 }
+
+
+
+@media only screen and (min-width: 500px) {
+    .post-details-card {
+        /* margin: 0 auto; */
+    }
+
+ }

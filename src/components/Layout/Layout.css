@@ -26,17 +26,26 @@ main {
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
 
   main {
     position: absolute;
     top: var(--header-height);
     left: var(--navbar-left-width);
     right: var(--navbar-right-width);
-    max-width: 1980px;
-    min-width: 350px;
+    /* max-width: 1980px; */
+    /* min-width: 350px; */
     margin: 0 auto;
+    max-width: 1000px;
   }
 
 
+}
+
+
+@media only screen and (min-width: 1024px) {
+  main {
+    left: calc((var(--navbar-left-width) + 100px));
+    width: 1280px;
+  }
 }

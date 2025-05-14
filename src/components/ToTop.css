@@ -6,6 +6,18 @@
   /* z-index: 5000; */
   color: var(--signup-button);
     z-index: 1000;
+    cursor: pointer;
+    transition: 400ms all ease-in-out;
+}
+
+
+.to-top svg:active {
+  transform: scale(0.95);
+
+}
+
+.to-top svg:hover {
+  color: brown;
 }
 
 
