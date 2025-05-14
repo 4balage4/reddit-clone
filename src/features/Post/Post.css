@@ -122,16 +122,6 @@
     width: 100%;
   }
 
-  .post-card {
-    /* border: 1px black solid;
-    padding: 25px 0;
-    width: calc(100vw - var(--navbar-left-width) - var(--navbar-right-width));
-    margin: 50px auto; */
-  }
-
-  .post-buttons {
-
-  }
 
 
 }
