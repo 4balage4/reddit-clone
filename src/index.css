@@ -8,7 +8,7 @@
 @import './features/index.css';
 
 :root {
-  --navbar-left-width: 200px;
+  --navbar-left-width: 150px;
   --navbar-right-width: 200px;
   /* also this is the top property for the navbars */
   --header-height: 75px;

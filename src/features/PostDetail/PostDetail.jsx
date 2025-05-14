@@ -40,7 +40,7 @@ function PostDetail() {
 
       const {post, comments, error, status} = useSelector(state => state.postDetail)
 
-      const {title, id, score, ups, author, created, url, subreddit, preview, num_comments, over_18, permalink } = post
+      const {title, id, score, ups, author, created, url, subreddit, preview, num_comments, over_18, permalink , selftext} = post
 
       // console.log('posturl: ',fetchPostUrl)
     //   console.log('POST details: ', post)
@@ -84,6 +84,7 @@ function PostDetail() {
               comments={num_comments}
               over18={over_18}
               permalink={permalink}
+              selftext={selftext}
               />
           <PostComments/>
         </div>

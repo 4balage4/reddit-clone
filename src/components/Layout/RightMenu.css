@@ -1,3 +1,6 @@
+
+/* for future development */
+
 .navbar-right {
   position: fixed;
   right: 0;
@@ -33,6 +36,16 @@
     display: none;
   }
 }
+
+
+
+@media only screen and (min-width: 1024px) {
+  .navbar-right {
+
+  }
+
+}
+
 
 
 /*   <div className='community'>

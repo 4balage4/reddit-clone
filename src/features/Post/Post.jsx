@@ -19,6 +19,7 @@ function Post({
   over18,
   comments,
   permalink,
+  selftext
 }) {
 
 
@@ -35,7 +36,12 @@ function Post({
             <span> • {getPostDate(created)} </span>
             </p>
       </div>
+      <div className='post-details'>
+        <p>{selftext}</p>
+      </div>
+      <div className='post-image-container'>
       <img className="post-image" src={url} alt="" />
+      </div>
     </Link>
       <div className="post-buttons">
         <div className="likes">
