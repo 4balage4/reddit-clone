@@ -14,7 +14,8 @@
 
 @media only screen and (min-width: 500px) {
   .posts-container {
-    align-items: start;
+    align-items: center;
+
   }
 
 
@@ -26,7 +27,7 @@
 @media only screen and (min-width: 1024px) {
   .posts-container {
     align-items: center;
-    width: 1024px;
+    /* width: 50vw; */
   }
 
 
