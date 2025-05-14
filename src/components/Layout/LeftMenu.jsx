@@ -9,24 +9,19 @@ import {setActive} from '../../features/menuSlices/activeSlice'
 function LeftMenu() {
   const dispatch = useDispatch()
 
-  const [open, setOpen] = useState(false)
-
-  function handleMenu() {
-    setOpen(prev => !prev)
-  }
 
 
   return (
     <nav className='navbar-left'>
-        <h3 onClick={handleMenu}>Menu</h3>
+        <h3>Menu</h3>
       <Link to="/all">
-        <Button className={`navbar-left-button ${open && 'show'}`} onClick={() => dispatch(setActive('all'))}>Home</Button>
+        <Button className={`navbar-left-button`} onClick={() => dispatch(setActive('all'))}>Home</Button>
       </Link>
       <Link to="/pics">
-        <Button className={`navbar-left-button ${open && 'show'}`} onClick={() => dispatch(setActive('popular'))}>Pics</Button>
+        <Button className={`navbar-left-button`} onClick={() => dispatch(setActive('popular'))}>Pics</Button>
       </Link>
       <Link to="/europe">
-        <Button className={`navbar-left-button ${open && 'show'}`} onClick={() => dispatch(setActive('amazing'))}>Europe</Button>
+        <Button className={`navbar-left-button`} onClick={() => dispatch(setActive('amazing'))}>Europe</Button>
       </Link>
     </nav>
   )
