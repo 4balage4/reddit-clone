@@ -8,13 +8,18 @@ import postDetailReducer from './features/PostDetail/postDetailSlice'
 import searchReducer from './features/menuSlices/searchSlice'
 
 
-export const store = configureStore({
-  reducer: {
+const rootReducer = {
     all: allReducer,
     amazing: amazingReducer,
     popular: popularReducer,
     active: activeReducer,
     postDetail: postDetailReducer,
     search: searchReducer,
-  }
+}
+
+export const store = configureStore({
+  reducer: rootReducer,
 })
+
+
+export {rootReducer}

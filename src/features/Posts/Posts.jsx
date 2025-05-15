@@ -18,6 +18,11 @@ function Posts() {
   const popularStatus = useSelector(state=> state.popular.status)
   const searchStatus = useSelector(state=> state.search.status)
 
+  const {error} = useSelector(state=> state.all)
+  const amazingError = useSelector(state=> state.amazing.error)
+  const popularError = useSelector(state=> state.popular.error)
+  const searchError = useSelector(state=> state.search.error)
+
 
   // here is the problem, somehow the popular and the amazing does not work
 
@@ -48,6 +53,14 @@ function Posts() {
 
     return placeholderGenerator(<TemporaryPost />)
   }
+
+
+  // console.log(error)
+
+
+  // if (error && amazingError &&  popularError && searchError ) {
+  //     return  <h1>Hello error</h1>
+  // }
 
 
   return (

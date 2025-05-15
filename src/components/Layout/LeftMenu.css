@@ -25,11 +25,11 @@
 
 }
 .navbar-left-button {
-  padding: 5px 0px;
+  padding: 10px 10px;
   width: 100px;
-  margin: 10px 0;
+  margin: 5px 0;
   background-color: rgb(122, 186, 241);
-   font-size: 12px;
+  font-size: 14px;
 }
 
 .navbar-left-button:hover {
@@ -52,12 +52,16 @@
 
 @media only screen and (min-width: 500px) {
 
+
+
+
 .navbar-left {
   position: fixed;
   width: var(--navbar-left-width);
   background-color: aliceblue;
   padding: 15px 0;
   border-radius: 5px;
+
   top: var(--header-height);
   z-index: var(--menu-z-index);
   display: flex;
@@ -70,10 +74,10 @@
 .navbar-left h3 {
   /* padding: 5px ; */
   display: inline;
+      width: 150px;
   border: 1px solid black;
 padding: 10px 0px;
-  width: 80%;
-  margin: 5px 20px;
+    margin: 5px 20px;
   text-align: center;
   margin-bottom: 10px;
   border-radius: 15px;
@@ -81,10 +85,14 @@ padding: 10px 0px;
 }
 .navbar-left-button {
   padding: 10px 0px;
-  width: 80%;
+
   margin: 5px 20px;
   background-color: rgb(122, 186, 241);
    font-size: 12px;
+}
+.navbar-left, .navbar-left-button {
+    /* font-size: 16px; */
+  width: 150px;
 }
 
 .navbar-left-button:hover {
@@ -104,13 +112,12 @@ padding: 10px 0px;
 
 
 @media only screen and (min-width: 1024px) {
+.navbar-left  {
+  width: 250px;
+}
 
-  .navbar-left h3 {
-    width: 200px;
-  }
-
-.navbar-left, .navbar-left-button {
-  font-size: 16px;
-  width: 200px;
+.navbar-left, .navbar-left-button, .navbar-left h3 {
+  width: 250px;
+  font-size: 24px;
 }
 }

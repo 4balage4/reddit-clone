@@ -16,7 +16,7 @@
   --main-margin-top: 250px;
 
   /* also added to toTop, and background for the author  */
-  --signup-button:  rgb(250, 75, 75);
+  --signup-button:  #e60023;
   --signup-button-hover: rgb(241, 27, 27);
   --comments-color: rgb(220, 237, 252);
   --like-buttons-color: rgb(201, 228, 252);

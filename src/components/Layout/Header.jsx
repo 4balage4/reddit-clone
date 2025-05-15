@@ -1,5 +1,4 @@
 import Button from "../Button";
-// import imageUrl from '../../assets/custom-logo.png'
 import imageUrl from "../../assets/picdit-logo-wide.png";
 import { Link, useNavigate, createSearchParams } from "react-router";
 import { useDispatch } from "react-redux";
@@ -35,6 +34,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
+        <button>Hello</button>
         <Link to="/">
           <img src={imageUrl} alt="picdit logo" />
         </Link>
