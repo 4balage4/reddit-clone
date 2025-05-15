@@ -3,13 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { Provider } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import Layout from "./components/Layout/Layout";
 import Posts from "./features/Posts/Posts";
 import PostDetail from "./features/PostDetail/PostDetail";
 import { store } from "./store";
 import ScrollToTop from './utils/ScrollToTop'
 import ToastProvider from './components/ToastNotification/ToastProvider'
+import ErrorPage from './features/ErrorPages/ErrorPage'
+import ErrorPost from './features/ErrorPages/ErrorPost'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,22 +22,27 @@ createRoot(document.getElementById("root")).render(
 
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Posts />} />
-            <Route path="/all" element={<Posts />} />
-            <Route path="/all/:name" element={<PostDetail />} />
+          {/* setup for the main page to navigate to all */}
+            <Route path="/" element={<Navigate to="all" />} />
 
-            <Route path="/search" element={<Posts />} />
-            <Route path="/:name" element={<PostDetail />} />
+
+            <Route path="/all" element={<Posts />} />
+            <Route path="/all/:id" element={<PostDetail />} />
+
+
 
             <Route path="/pics" element={<Posts />} />
-            <Route path="/pics/:name" element={<PostDetail />} />
+            <Route path="/pics/:id" element={<PostDetail />} />
 
-            <Route path="/europe/:name" element={<PostDetail />} />
+            <Route path="/europe/:id" element={<PostDetail />} />
             <Route path="/europe" element={<Posts />} />
 
 
             <Route path="/search" element={<Posts />} />
-            <Route path="/search/:name" element={<PostDetail />} />
+            <Route path="/search/:id" element={<PostDetail />} />
+
+            <Route path="/not-found" element={<ErrorPost/>} />
+            <Route path="*" element={<ErrorPage/>} />
             {/* <Route path='/' element= */}
           </Route>
         </Routes>

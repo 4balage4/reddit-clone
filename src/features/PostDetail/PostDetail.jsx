@@ -1,5 +1,5 @@
 // Post page with comments. Just the details of the post.
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, Navigate } from "react-router";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPostDetails } from "./postDetailSlice";
@@ -54,6 +54,12 @@ function PostDetail() {
         {placeholderGenerator(<TemporaryComment />)}
       </>
     );
+  }
+
+
+
+  if (!id) {
+    return <Navigate to='/not-found'/>
   }
 
   return (
