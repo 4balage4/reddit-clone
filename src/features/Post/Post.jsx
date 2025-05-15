@@ -30,11 +30,11 @@ function Post({
   return (
     <div className="post-card">
       <Link to={disabledToClick ? '' : `${score}`} state={{fetchPostUrl: permalink}}>
-      <h3>{title}</h3>
-      <div className='post-details'>
-        <p className='created-author'>
+        <p className='created-in'>
           in /🌐{subReddit}
           </p>
+      <h3>{title}</h3>
+      <div className='post-details'>
           <p>
             posted by <span className='post-author'> {author}</span>
             <span> • {getPostDate(created)} </span>
@@ -60,7 +60,7 @@ function Post({
             </div>
         </div>
         <Link to={disabledToClick ? '' : `${score}`} state={{fetchPostUrl: permalink}}>
-        <p className='post-comment-container'><AiOutlineComment/> ({comments})</p>
+        <p className='post-comment-container'><AiOutlineComment/> {comments}</p>
         </Link>
         <a href={url} target="_blank" >
          <MdOutlineLink/>

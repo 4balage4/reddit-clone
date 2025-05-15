@@ -5,16 +5,17 @@
   display: flex;
   flex-direction: column;
   margin: 15px;
-  padding: 10px;
+  padding: 25px 15px;
   /* background-color: gray; */
-  box-shadow: 0 0 5px 0 black;
+  box-shadow: 0 0 5px 0 rgb(194, 194, 194);
   border-radius: 10px;
-  border: 1px solid black;
+  /* border: 1px solid rgb(158, 158, 158); */
+  background-color: var(--comments-color);
 }
 
 .post-card h3 {
   font-size: 24px;
-  margin: 5px;
+  margin: 10px 0;
 }
 
 .post-card img {
@@ -25,26 +26,51 @@
   /* box-shadow: 0 0 5px 0 black; */
 }
 
+
+.created-in {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* .post-details {
+  margin: 15px 5px;
+} */
+
+.post-details p {
+  font-size: 12px;
+  margin: 10px 0;
+
+}
+
 .post-author {
   /* text-decoration: underline; */
   font-weight: 800;
-  color: white;
-  background-color: var(--signup-button);
-  padding: 2.5px 5px;
+  color: black;
+  text-decoration: underline;
+  line-height: 1.2;
+  /* background-color: var(--signup-button-hover); */
+  padding: 0 5px;
 
   border-radius: 12.5px 5px;
 
 }
 
+.like-container, .post-buttons a {
+  padding: 7.5px 10px;
+ background-color: var(--like-buttons-color);
+ border-radius: 10px;
+ margin-right: 5px;
+
+}
+
 .like-container {
   display: flex;
-
   align-items: center;
   /* margin: 0 5px; */
 }
 
 .like-container svg {
-  font-size: 25px;
+  font-size: 15px;
 }
 
 
@@ -54,20 +80,12 @@
   font-weight: 700;
 }
 
-.post-details {
-  margin: 15px 5px;
-}
-
-.post-details p {
-  margin: 5px 0;
-}
-
 
 .post-buttons {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .post-buttons a {
@@ -77,15 +95,15 @@
 }
 
 .post-buttons a svg {
-  font-size: 30px;
+  font-size: 15px;
   margin: 0 5px;
 
 }
 
 .post-buttons a:hover {
    cursor: pointer;
-  transform: scale(1.15);
-    transition: all 200ms ease-in-out;
+  text-decoration: underline;
+   transition: all 300ms ease;
 }
 
 .post-comment-container {
@@ -122,6 +140,21 @@
     width: 100%;
   }
 
+  .post-buttons a svg, .like-container svg {
+    font-size: 25px;
+
+  }
+
+  .like-container, .post-buttons a {
+  padding: 7.5px 15px;
+
+ margin-right: 10px;
+
+}
+
+.post-buttons {
+  justify-content: start;
+}
 
 
 }

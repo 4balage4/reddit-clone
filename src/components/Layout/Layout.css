@@ -10,13 +10,11 @@
 
 
 main {
-  /* max-width: 100vw; */
-  /* background-color: gray; */
   position: absolute;
   width: 100%;
   margin: 0 auto;
   margin-top: calc(var(--header-height) + 50px);
-  /* padding: 10px; */
+
 }
 
 
@@ -33,8 +31,6 @@ main {
     top: var(--header-height);
     left: var(--navbar-left-width);
     right: var(--navbar-right-width);
-    /* max-width: 1980px; */
-    /* min-width: 350px; */
     margin: 0 auto;
     max-width: 800px;
   }

@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 /* component css */
 @import './components/index.css';
@@ -20,13 +19,15 @@
   --signup-button:  rgb(250, 75, 75);
   --signup-button-hover: rgb(241, 27, 27);
   --comments-color: rgb(220, 237, 252);
+  --like-buttons-color: rgb(201, 228, 252);
 
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:  'Ubuntu', 'Roboto',sans-serif;
+  letter-spacing: 0.4px;
 }
 
 body {

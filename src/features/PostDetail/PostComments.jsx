@@ -10,30 +10,6 @@ function PostComments() {
   }
 
 
-  // const renderComments = (commentList) => commentList.map((comment) => {
-  //   const {id, author, ups, body, created, reply } = comment.data
-  //   return (
-  //     <div style={{background: 'gray'}}>
-  //       <Comment
-  //       key={id}
-  //       author={author}
-  //       ups={ups}
-  //       body={body}
-  //       created={created}
-  //       />
-  //       {/* I do reply, because, I am passing in a new array of comments. If reply returns true
-  //       I have a comments array
-  //       if reply returns false, does not do anything.
-  //        */}
-  //       {Array.isArray(reply) && reply.length > 0 && (
-  //         <div style={{margin: "15px 10px", backgroundColor: 'blue'}}>
-  //           {renderComments(reply)}
-  //         </div>
-  //       )}
-  //     </div>
-  //   )
-  // });
-
   const renderComments = commentList => {
 
 
