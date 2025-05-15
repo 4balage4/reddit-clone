@@ -41,12 +41,15 @@ overflow: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
 }
+
 
 
 .comment-social .comment-section-likes {
   display: flex;
   align-items: center;
+
 }
 
 .comment-social .comment-section-likes svg {
@@ -67,10 +70,10 @@ overflow: hidden;
   display: none;
 }
 
-.show-replies {
-  padding: 2.5px 5px;
-  background-color: rgb(220, 237, 252);
-  box-shadow: 0 0 2px 0 rgb(43, 43, 43);
+.show-replies, .comment-section-likes {
+  padding: 5px 10px;
+  background-color: var(--like-buttons-color);
+  border-radius: 10px;
   font-size: 12;
   margin-left: 15px;
   display: flex;
@@ -84,7 +87,7 @@ overflow: hidden;
 
 
 .show-replies.active {
-  background-color: rgb(185, 221, 252);
+  background-color: rgb(137, 198, 252);
 }
 
 
@@ -94,7 +97,7 @@ overflow: hidden;
   .comments-container {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
   }
  }
 

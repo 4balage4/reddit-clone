@@ -8,11 +8,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-    const res = await fetch(
-     `https://www.reddit.com/search/.json?q=${params}`
-    );
+    const res = await fetch(`https://www.reddit.com/search/.json?q=${params}`);
     const json = await res.json();
-    return json.data.children.map(item => item.data)
+    return json.data.children.map((item) => item.data);
   }
 );
 
@@ -42,4 +40,4 @@ const searchSlice = createSlice({
 });
 
 // export { fetchSerachParams } - this is exported
-export default searchSlice.reducer
+export default searchSlice.reducer;

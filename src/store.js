@@ -1,6 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-// import postsReducer from './features/Posts/postsSlice'
-import counterReducer from './features/counterSlice'
+
 import allReducer from './features/menuSlices/allSlice'
 import amazingReducer from './features/menuSlices/amazingSlice'
 import popularReducer from './features/menuSlices/popularSlice'
@@ -11,8 +10,6 @@ import searchReducer from './features/menuSlices/searchSlice'
 
 export const store = configureStore({
   reducer: {
-    // posts: postsReducer
-    counter: counterReducer,
     all: allReducer,
     amazing: amazingReducer,
     popular: popularReducer,
