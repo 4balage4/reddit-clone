@@ -55,13 +55,6 @@ function Posts() {
   }
 
 
-  // console.log(error)
-
-
-  // if (error && amazingError &&  popularError && searchError ) {
-  //     return  <h1>Hello error</h1>
-  // }
-
 
   return (
     <div className='posts-container'>
