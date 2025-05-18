@@ -24,6 +24,8 @@ function Post({
   disabledToClick
 }) {
 
+  
+
 
   const {addToast} = useToast()
 
