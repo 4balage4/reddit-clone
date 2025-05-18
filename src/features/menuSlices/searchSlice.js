@@ -1,5 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+
+const isLocal = import.meta.env.DEV;
+
+const BASE_URL = isLocal
+  ? 'https://www.reddit.com/search.json'
+  : '/api/search';
 // managing the state of the
 
 //  creating a fetch function ---> first with a pre defined parameter
@@ -8,7 +14,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-     const res = await fetch(`api/search.json?q=${params}`);
+     const res = await fetch(`${BASE_URL}?q=${params}`);
+     console.log(`this is the link it fetches: ${BASE_URL}?q=${params}`)
     if (!res.ok) {
       throw new Error(`Search failed with status ${res.status}`);
     }
