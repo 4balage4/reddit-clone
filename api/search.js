@@ -4,6 +4,7 @@ export default async function handler(req, res) {
 
   if (!q) {
     return res.status(400).json({ error: "Missing search query 'q'" });
+
   }
 
   try {
@@ -38,3 +39,4 @@ export default async function handler(req, res) {
     });
   }
 }
+
