@@ -8,10 +8,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-    const res = await fetch(`/api/search?q=${params}`);
-      if (!res.ok) {
-        throw new Error(`Search failed with status ${res.status}`);
-      }
+     const res = await fetch(`/api/search?q=${params}`);
+    if (!res.ok) {
+      throw new Error(`Search failed with status ${res.status}`);
+    }
     const json = await res.json();
     return json.data.children.map((item) => item.data);
 
