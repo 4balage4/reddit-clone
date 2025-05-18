@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const redditRes = await fetch(`https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`);
+    const redditRes = await fetch(`https://www.reddit.com/search/.json?q=${encodeURIComponent(q)}`);
     const data = await redditRes.json();
 
     res.status(200).json(data);
