@@ -1,14 +1,13 @@
 export default async function handler(req, res) {
   const { q } = req.query;
-  console.log(q)
+  console.log('in the API', q)
 
   if (!q) {
     return res.status(400).json({ error: "Missing search query 'q'" });
   }
 
   try {
-    console.log(`https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`,
-      )
+    console.log(`https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`)
 
 
     const redditRes = await fetch(
