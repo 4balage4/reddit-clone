@@ -5,9 +5,10 @@ import {useSelector, useDispatch} from 'react-redux'
 import {fetchAll} from '../../features/menuSlices/allSlice'
 import {fetchPopular} from '../../features/menuSlices/popularSlice'
 import {fetchAmazing} from '../../features/menuSlices/amazingSlice'
+import {fetchSearch} from '../menuSlices/searchSlice'
 import TemporaryPost from '../Post/TemporaryPost'
 import {placeholderGenerator} from '../../utils/placeHolderGenerator'
-
+import {useLocation} from 'react-router'
 
 
 function Posts() {
@@ -18,10 +19,14 @@ function Posts() {
   const popularStatus = useSelector(state=> state.popular.status)
   const searchStatus = useSelector(state=> state.search.status)
 
-  const {error} = useSelector(state=> state.all)
-  const amazingError = useSelector(state=> state.amazing.error)
-  const popularError = useSelector(state=> state.popular.error)
-  const searchError = useSelector(state=> state.search.error)
+  // getting the search params. The routing happened when the user clicked to search
+  const location = useLocation()
+  const query = new URLSearchParams(location.search).get('q')
+
+  // const {error} = useSelector(state=> state.all)
+  // const amazingError = useSelector(state=> state.amazing.error)
+  // const popularError = useSelector(state=> state.popular.error)
+  // const searchError = useSelector(state=> state.search.error)
 
 
   // here is the problem, somehow the popular and the amazing does not work
@@ -36,8 +41,13 @@ function Posts() {
     }
     else if (active === 'amazing') {
       dispatch(fetchAmazing())
-
     }
+    /* checking is there a query */
+    else if (active === 'search' && query) {
+      dispatch(fetchSearch(query))
+    }
+
+
 
   }, [active, dispatch])
 

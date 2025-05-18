@@ -28,9 +28,6 @@ createRoot(document.getElementById("root")).render(
             <Route path="/all/:id" element={<PostDetail />} />
 
 
-
-
-
             <Route path="/pics" element={<Posts />} />
             <Route path="/pics/:id" element={<PostDetail />} />
 

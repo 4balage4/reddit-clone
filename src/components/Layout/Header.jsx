@@ -20,8 +20,9 @@ function Header() {
   function onSubmit(e) {
     e.preventDefault();
     dispatch(setActive("search"));
-    dispatch(fetchSearch(searchQuery));
 
+    // creates search params. /search?q=blablabla
+    // and also navigates it to the new page, where the dispatch happens
     navigate({
       pathname: "/search",
       search: createSearchParams({
