@@ -49,10 +49,11 @@ function Posts() {
     }
     /* checking is there a query */
     else if (query && active === 'search') {
+      console.log( 'query:', query)
       dispatch(fetchSearch(query))
     }
 
-  }, [active, dispatch, query])
+  }, [active, dispatch, location.search])
 
   // chaining. state[active] -> returns all, amazing, popular state.
   const activePosts = useSelector(state => {
