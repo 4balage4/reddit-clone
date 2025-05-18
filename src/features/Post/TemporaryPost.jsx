@@ -1,8 +1,8 @@
 
 
-function TemporaryPost() {
+function TemporaryPost(key) {
   return (
-     <div className="post-card loading-post">
+     <div className="post-card loading-post" key={key}>
 
       <h3 className="loading-post"></h3>
       <div className='post-details loading-post'>

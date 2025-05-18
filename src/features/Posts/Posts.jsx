@@ -5,9 +5,8 @@ import {useSelector, useDispatch} from 'react-redux'
 import {fetchAll} from '../../features/menuSlices/allSlice'
 import {fetchPopular} from '../../features/menuSlices/popularSlice'
 import {fetchAmazing} from '../../features/menuSlices/amazingSlice'
-import {fetchSearch} from '../menuSlices/searchSlice'
+import {fetchSearch} from '../../features/menuSlices/searchSlice'
 import TemporaryPost from '../Post/TemporaryPost'
-import {placeholderGenerator} from '../../utils/placeHolderGenerator'
 import {useLocation} from 'react-router'
 
 
@@ -33,8 +32,6 @@ function Posts() {
 
   useEffect(() => {
 
-    console.log('query:', query)
-
     console.log('active:', active)
 
     if (active === 'popular') {
@@ -50,7 +47,9 @@ function Posts() {
     /* checking is there a query */
     else if (query && active === 'search') {
       console.log( 'query:', query)
+      console.log('active within the query: ', active)
       dispatch(fetchSearch(query))
+      console.log('dispatch fetchSearch -> ran')
     }
 
   }, [active, dispatch, location.search])
@@ -61,14 +60,19 @@ function Posts() {
   })
 
 
-  console.log(query)
 
 
 
 
   if (status === 'loading' || amazingStatus === 'loading'|| popularStatus === 'loading' || searchStatus === 'loading') {
+     const placeholders = []
+        for (let i = 0; i < 5; i++)
+        {
+          placeholders.push(<TemporaryPost key={i}/>)
+        }
 
-    return placeholderGenerator(<TemporaryPost />)
+        return placeholders
+
   }
 
 
