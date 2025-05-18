@@ -32,8 +32,6 @@ function Posts() {
 
   useEffect(() => {
 
-    console.log('active:', active)
-
     if (active === 'popular') {
       dispatch(fetchPopular())
 
@@ -46,10 +44,8 @@ function Posts() {
     }
     /* checking is there a query */
     else if (query && active === 'search') {
-      console.log( 'query:', query)
-      console.log('active within the query: ', active)
       dispatch(fetchSearch(query))
-      console.log('dispatch fetchSearch -> ran')
+
     }
 
   }, [active, dispatch, location.search])
