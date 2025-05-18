@@ -6,13 +6,19 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log(`https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`,
+      )
+
+
+      // ${encodeURIComponent(q)}
     const redditRes = await fetch(
-      `https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`,
+      `https://www.reddit.com/search.json?q=banana`,
       {
         headers: {
           "User-Agent": "reddit-clone-app/1.0 (by /u/yourusername)"
         }
       }
+
     );
 
     if (!redditRes.ok) {
