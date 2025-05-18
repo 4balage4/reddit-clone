@@ -32,6 +32,11 @@ function Posts() {
   // here is the problem, somehow the popular and the amazing does not work
 
   useEffect(() => {
+
+    console.log('query:', query)
+
+    console.log('active:', active)
+
     if (active === 'popular') {
       dispatch(fetchPopular())
 
@@ -43,7 +48,7 @@ function Posts() {
       dispatch(fetchAmazing())
     }
     /* checking is there a query */
-    else if (active === 'search' && query) {
+    else if (query && active === 'search') {
       dispatch(fetchSearch(query))
     }
 
