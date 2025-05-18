@@ -4,7 +4,7 @@
   ],
    "functions": {
     "api/*.js": {
-      "runtime": "nodejs18.0"
+      "runtime": "nodejs18.0.0"
     }
   }
 }
