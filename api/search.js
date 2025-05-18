@@ -1,5 +1,6 @@
 export default async function handler(req, res) {
   const { q } = req.query;
+  console.log(q)
 
   if (!q) {
     return res.status(400).json({ error: "Missing search query 'q'" });
@@ -10,9 +11,8 @@ export default async function handler(req, res) {
       )
 
 
-      // ${encodeURIComponent(q)}
     const redditRes = await fetch(
-      `https://www.reddit.com/search.json?q=banana`,
+      `https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`,
       {
         headers: {
           "User-Agent": "reddit-clone-app/1.0 (by /u/yourusername)"

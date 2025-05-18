@@ -8,7 +8,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-     const res = await fetch(`https://www.reddit.com/search.json?q=banana`);
+     const res = await fetch(`api/search.json?q=${params}`);
     if (!res.ok) {
       throw new Error(`Search failed with status ${res.status}`);
     }
