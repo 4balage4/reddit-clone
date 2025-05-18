@@ -58,9 +58,9 @@ function PostDetail() {
 
 
 
-  if (!id) {
-    return <Navigate to='/not-found'/>
-  }
+  // if (!id) {
+  //   return <Navigate to='/not-found'/>
+  // }
 
   return (
     <div className="post-details-card">
