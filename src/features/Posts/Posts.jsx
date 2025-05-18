@@ -49,7 +49,7 @@ function Posts() {
 
 
 
-  }, [active, dispatch])
+  }, [active, dispatch, query])
 
   // chaining. state[active] -> returns all, amazing, popular state.
   const activePosts = useSelector(state => {
