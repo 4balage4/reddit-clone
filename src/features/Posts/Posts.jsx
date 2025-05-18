@@ -47,14 +47,15 @@ function Posts() {
       dispatch(fetchSearch(query))
     }
 
-
-
   }, [active, dispatch, query])
 
   // chaining. state[active] -> returns all, amazing, popular state.
   const activePosts = useSelector(state => {
     return state[active]?.posts ?? []
   })
+
+
+  console.log(query)
 
 
 
