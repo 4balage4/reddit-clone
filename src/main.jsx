@@ -23,7 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route element={<Layout />}>
           {/* setup for the main page to navigate to all */}
-            <Route path="/" element={<Navigate to="all/" />} />
+            <Route path="/" element={<Navigate to="/all" />} />
             <Route path="/all" element={<Posts />} />
             <Route path="/all/:id" element={<PostDetail />} />
 
