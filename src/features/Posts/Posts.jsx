@@ -22,6 +22,8 @@ function Posts() {
   const location = useLocation()
   const query = new URLSearchParams(location.search).get('q')
 
+
+
   // const {error} = useSelector(state=> state.all)
   // const amazingError = useSelector(state=> state.amazing.error)
   // const popularError = useSelector(state=> state.popular.error)
@@ -45,7 +47,6 @@ function Posts() {
     /* checking is there a query */
     else if (query && active === 'search') {
       dispatch(fetchSearch(query))
-
     }
 
   }, [active, dispatch, location.search])

@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
-const isLocal = import.meta.env.DEV;
+// const isLocal = import.meta.env.DEV;
 
-const BASE_URL = isLocal
-  ? 'https://www.reddit.com/search.json'
-  : '/api/search';
+// const BASE_URL = isLocal
+//   ? 'https://www.reddit.com/search.json'
+//   : '/api/search';
 // managing the state of the
 
 //  creating a fetch function ---> first with a pre defined parameter
@@ -14,14 +14,16 @@ const BASE_URL = isLocal
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-     const res = await fetch(`${BASE_URL}?q=${params}`);
-     console.log(`this is the link it fetches: ${BASE_URL}?q=${params}`)
-    if (!res.ok) {
+    const res = await fetch(`http://localhost:3000/reddit/search?q=${encodeURIComponent(params)}`);
+   if (!res.ok) {
       throw new Error(`Search failed with status ${res.status}`);
     }
     const json = await res.json();
-    return json.data.children.map((item) => item.data);
+    console.log(json)
+    const data =json.data.children.map((item) => item.data);
 
+    console.log(data)
+    return data
   }
 );
 

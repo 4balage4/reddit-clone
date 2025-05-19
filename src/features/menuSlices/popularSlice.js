@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchPopular = createAsyncThunk(
   "popular/fetchPopular",
   async () => {
-    const res = await fetch("https://www.reddit.com/r/pics.json");
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/reddit/pics`);
     const json = await res.json();
     return json.data.children.map((item) => item.data);
   }
