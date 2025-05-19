@@ -1,41 +1,33 @@
-export default async function handler(req, res) {
-  const { q } = req.query;
+import {getAccessToken} from './_utils.js'
 
-  if (!q) {
-    return res.status(400).json({ error: "Missing search query 'q'" });
-  }
+
+app.get('/reddit/search', async (req, res) => {
 
   try {
-    const redditRes = await fetch(
-      `https://www.reddit.com/search.json?q=${encodeURIComponent(q)}`,
-      {
-        headers: {
-          "User-Agent": "reddit-clone-app/1.0"
-        }
-      }
-    );
+    const token = await getAccessToken();
+    console.log('🟢 Got access token:', token.slice(0, 10)); // show part of token
 
-    const contentType = redditRes.headers.get("content-type");
-    const status = redditRes.status;
+    const query = req.query.q;
+    console.log('🔍 Query:', query);
 
-    if (!redditRes.ok) {
-      const text = await redditRes.text();
-      console.error("Reddit response not ok:", { status, contentType, text });
-      return res.status(500).json({
-        error: `Reddit API failed`,
-        status,
-        contentType,
-        message: text
-      });
+    if (!query) {
+      console.log('⛔ Missing query');
+      return res.status(400).json({ error: 'Missing search query' });
     }
 
-    const data = await redditRes.json();
-    return res.status(200).json(data);
-  } catch (err) {
-    console.error("Reddit fetch error:", err.message);
-    return res.status(500).json({
-      error: "Failed to fetch from Reddit",
-      details: err.message
+    const redditRes = await fetch(`https://oauth.reddit.com/search?q=${encodeURIComponent(query)}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'User-Agent': 'web:PicDit:v1.0 (by /u/balage4)',
+      },
     });
+
+    const data = await redditRes.json();
+    console.log('✅ Reddit search response received');
+    res.json(data);
+
+  } catch (err) {
+    console.error('❌ Search error:', err.message);
+    res.status(500).json({ error: 'Reddit search failed', message: err.message });
   }
-}
+});
