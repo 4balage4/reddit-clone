@@ -1,6 +1,6 @@
 import { getAccessToken } from "./accessToken";
 
-app.get('/reddit/:subreddit', async (req, res) => {
+export default async function handler(req, res)  {
   try {
     const token = await getAccessToken();
     const { subreddit } = req.params;
@@ -18,4 +18,4 @@ app.get('/reddit/:subreddit', async (req, res) => {
     console.error(err.message);
     res.status(500).json({ error: 'Reddit API call failed', message: err.message });
   }
-});
+};
