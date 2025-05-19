@@ -14,15 +14,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSearch = createAsyncThunk(
   "search/fetchSearch",
   async (params) => {
-    const res = await fetch(`http://localhost:3000/reddit/search?q=${encodeURIComponent(params)}`);
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/reddit/search?q=${encodeURIComponent(params)}`);
    if (!res.ok) {
       throw new Error(`Search failed with status ${res.status}`);
     }
     const json = await res.json();
-    console.log(json)
     const data =json.data.children.map((item) => item.data);
 
-    console.log(data)
     return data
   }
 );
