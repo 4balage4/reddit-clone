@@ -10,7 +10,6 @@ function ToastProvider({ children }) {
   const addToast = (message, type) => {
     const id = Date.now();
     setToasts((prev) => [...prev, { id, message, type }]);
-    console.log(toasts)
 
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));

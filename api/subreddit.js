@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 import { getAccessToken } from "./_utils.js";
 
 app.get('/reddit/:subreddit', async (req, res) => {
