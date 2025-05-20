@@ -1,17 +1,6 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/reddit/search",
-      "dest": "/api/reddit-search"
-    },
-    {
-      "src": "/reddit/(.*)",
-      "dest": "/api/reddit-subreddit"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/reddit/search", "destination": "/api/search" },
+    { "source": "/reddit/:sub", "destination": "/api/subreddit/:sub" }
   ]
 }
