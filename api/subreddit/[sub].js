@@ -1,4 +1,4 @@
-import { getAccessToken } from "./accessToken";
+import { getAccessToken } from "../accessToken";
 
 export default async function handler(req, res)  {
   try {
