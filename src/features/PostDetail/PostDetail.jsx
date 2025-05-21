@@ -2,7 +2,7 @@
 import { useLocation, useNavigate, Navigate } from "react-router";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPostDetails } from "./postDetailSlice";
+import { fetchPostDetails } from "../menuSlices/postDetailSlice";
 import PostComments from "./PostComments";
 import Post from "../Post/Post";
 import TemporaryPost from "../Post/TemporaryPost";
@@ -15,17 +15,18 @@ function PostDetail() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { fetchPostUrl } = location.state || {};
+  const { postId, sub } = location.state || {};
 
-  const urlToFetch = `https://www.reddit.com${fetchPostUrl}.json`;
+
+  // const urlToFetch = `https://www.reddit.com${fetchPostUrl}.json`;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (fetchPostUrl) {
-      dispatch(fetchPostDetails(urlToFetch));
+    if (postId && sub) {
+      dispatch(fetchPostDetails({sub, postId}));
     }
-  }, [dispatch, fetchPostUrl]);
+  }, [dispatch, postId, sub]);
 
   const { post, comments, error, status } = useSelector(
     (state) => state.postDetail
@@ -39,7 +40,6 @@ function PostDetail() {
     author,
     created,
     url,
-    subreddit,
     preview,
     num_comments,
     over_18,
@@ -77,7 +77,7 @@ function PostDetail() {
         author={author}
         created={created}
         url={url}
-        subReddit={subreddit}
+        subReddit={sub}
         images={preview}
         comments={num_comments}
         over18={over_18}

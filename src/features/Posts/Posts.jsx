@@ -23,7 +23,6 @@ function Posts() {
   const query = new URLSearchParams(location.search).get('q')
 
 
-
   // const {error} = useSelector(state=> state.all)
   // const amazingError = useSelector(state=> state.amazing.error)
   // const popularError = useSelector(state=> state.popular.error)
@@ -89,7 +88,10 @@ function Posts() {
         }
         // console.log(post.title, post.permalink)
         return (
-          <Post title={post.title}
+          <Post
+          status={active}
+          title={post.title}
+          id={post.id}
           key={post.id}
           score={post.score}
           ups={post.ups}
