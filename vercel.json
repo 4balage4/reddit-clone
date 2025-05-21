@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/reddit/search", "destination": "/api/search" },
-    { "source": "/reddit/:sub", "destination": "/api/subreddit/:sub" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
