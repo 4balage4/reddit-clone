@@ -1,10 +1,14 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
 
+// here I create an active post. Which is chosen
+// I get an id
+// i should get
+
 export const fetchPostDetails = createAsyncThunk(
   'postDetail/fetchPostDetails',
-  async (link, thunkAPI) => {
-    const res = await fetch(link)
+  async ({sub ,postId}, thunkAPI) => {
+     const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/reddit/${sub}/${postId}`);
     if (!res.ok) {
       return thunkAPI.rejectWithValue(await res.text());
     }

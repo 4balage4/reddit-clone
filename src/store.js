@@ -4,7 +4,7 @@ import allReducer from './features/menuSlices/allSlice'
 import amazingReducer from './features/menuSlices/amazingSlice'
 import popularReducer from './features/menuSlices/popularSlice'
 import activeReducer from './features/menuSlices/activeSlice'
-import postDetailReducer from './features/PostDetail/postDetailSlice'
+import postDetailReducer from './features/menuSlices/postDetailSlice'
 import searchReducer from './features/menuSlices/searchSlice'
 
 
