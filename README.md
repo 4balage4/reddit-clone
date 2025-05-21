@@ -4,7 +4,7 @@ Codecademy project where I created an application using Reddit API, React, Redux
 
 [live page](https://reddit-clone-ecru-pi.vercel.app/)
 
-
+ <!--
 ## The project requrirements are:
 The application allow users to view and search posts and comments provided by API.
   - Version control: Git and Github
@@ -19,8 +19,7 @@ The application allow users to view and search posts and comments provided by AP
   - Users are delighted with a cohesive design
   - Users are delighted with animations and transitions
   - Users are able to leave error state
-
-
+-->
 
 ## An open-ended Reddit clone project using the Reddit API.
 - Redux for state management
@@ -29,7 +28,7 @@ The application allow users to view and search posts and comments provided by AP
 - OAuth2 running on a backend server
 
 
-The app is called Picdit, an app that displays only picture-based posts using the Reddit Public API.
+The app is **Picdit**, which displays only picture-based posts using the Reddit Official API.
 
 The user can:
 - View posts from Reddit
@@ -70,3 +69,7 @@ I learned to:
  - Handle errors more efficiently
  - Adapt and recover faster from setbacks
   
+![Screenshot 2025-05-21 120009](https://github.com/user-attachments/assets/25abba05-6be8-4244-9535-5492552c5c51)
+
+<img src="https://github.com/user-attachments/assets/5b8f5ee6-7e87-4466-a3f9-77f46d31e145" alt="pictid mobile view" width="200" />
+
