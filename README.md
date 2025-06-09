@@ -1,4 +1,4 @@
-# Reddit-clone
+# Picdit Reddit-clone
 
 Codecademy project where I created an application using Reddit API, React, Redux, and Unit testing (Vitest and React Testing Library), OAuth2 running on a backend server.
 
